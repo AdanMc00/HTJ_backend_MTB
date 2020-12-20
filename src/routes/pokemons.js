@@ -21,15 +21,15 @@ router.get('/', async (req, res) => {
       })
   }
 })
-router.get('/primeragen', async (req, res) => {
+router.get('/generation/:gen', async (req, res) => {
   try {
-    const pokemons = await pokemon.getPokemonsFirst()
-    console.log(pokemons)
+    const gen = req.params.gen
+    const pokemonsFound = await pokemon.getByGen(gen)
       res.json({
       success: true,
-      message: 'all pokemons',
+      message: ' pokemons by generation',
       data: {
-        pokemons
+        pokemonsFound
       }
     })
   } catch (error) {

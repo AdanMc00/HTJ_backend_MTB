@@ -25,6 +25,10 @@ function getAll() {
   return Pokemon.find()
 }
 
+function getByGen(gen) {
+  return Pokemon.find({ generation: gen  } )
+}
+
 
 function getById(id) {
   return Pokemon.findById(id)
@@ -49,6 +53,6 @@ module.exports = {
   getAll,
   getById,
   updateById,
-  getPokemonsFirst
+  getByGen
 
 }
