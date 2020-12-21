@@ -40,6 +40,25 @@ router.get('/generation/:gen', async (req, res) => {
       })
   }
 })
+router.post('/populate',async (request, response) => {
+  try {
+    const newPokemon = await pokemon.insertData()
+    response.status(200),
+      response.json({
+        success: true,
+        message: 'Pokemon create',
+        data: {
+          pokemon: newPokemon
+        }
+      })
+  } catch (error) {
+    response.status(400),
+      response.json({
+        success: false,
+        message: error.message
+      })
+  }
+})
 router.post('/',async (request, response) => {
   try {
     const newPokemon = await pokemon.create(request.body)

@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "register": "node register.js",
-    "pokemons": "node pokemonsFirstGen.js",
+    "pokemons": "node pokemonsPrimeraGen.js",
     "dev": "nodemon index.js"
   },
   "author": "Adanmc",
@@ -28,3 +28,4 @@
     "passport-google-oauth": "^2.0.0"
   }
 }
+

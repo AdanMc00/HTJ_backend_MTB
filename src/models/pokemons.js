@@ -10,24 +10,38 @@ const pokemonsSchema = new mongoose.Schema({
     trim: true
   },
   abilities: [{
-    ability: String
+    ability: {
+      name: String,
+    }
   }],
   sprites: [{
-    sprite: String
+    back_default: String,
+    back_shiny: String,
+    front_default: String,
+    front_shiny: String
 
   }],
+
   stats: [{
-    stat: String
+    base_stat: Number,
+    stat: {
+      name: String,
+    }
   }],
+
   id: {
     type: Number,
     required: true
   },
-  typesOf: [{
-    typeOf: String
+  types: [{
+    slot: Number,
+    types: {
+      name: String
+    }
   }],
   generation: {
-    type: Number
+    type: Number,
+    default: 1,
   }
 })
 
